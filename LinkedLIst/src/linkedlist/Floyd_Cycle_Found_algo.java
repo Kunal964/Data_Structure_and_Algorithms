@@ -47,12 +47,12 @@ public class Floyd_Cycle_Found_algo {
         slow = head;
         Node Prev = null;  // last node
         while (slow != fast) {
-            Prev = fast;    //
+            Prev = fast;    // fast value initializes into prev then after fast point to fast.next
             slow = slow.next;
             fast = fast.next;
         }
 
-        // Remove Cycle --> last.next = null // connnection terminate krdiya list ka
+        // Remove Cycle --> last.next = null // connection terminate krdiya list ka
         assert Prev != null;
         Prev.next = null;
     }

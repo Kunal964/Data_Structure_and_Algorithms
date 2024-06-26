@@ -28,6 +28,7 @@ public class LinkedList {
         // addfirst mai newNode ka next head ko point krta hai or newnode head ban jati hai
         // means jo last mai aya sabse phle vo print hoga
         // yha pr tail fix ho jati hai head aga jata rheta hai
+        // basically address assign hora ha bss
     }
    public void addLast(int data) {
         // step 1
@@ -163,17 +164,16 @@ public class LinkedList {
         ll.add(4,5);
         ll.print(); // 1->2->3->4->5
         System.out.println("Size of the Linked List "+size);
-//        ll.removeFirst();
+        System.out.println(ll.removeFirst());
 //        ll.print();
 //
-//        ll.removeLast();
+        System.out.println(ll.removeLast());
 //        ll.print();
-        System.out.println(ll.itrSearch(3));
-        System.out.println(ll.itrSearch(6));
+ //       System.out.println(ll.itrSearch(3));
+//        System.out.println(ll.itrSearch(6));
+//        System.out.println(ll.search(head,4,0));
 
-        System.out.println(ll.search(head,4,0));
-
-        ll.reverse();
+      //  ll.reverse();
         ll.print();
 
 
