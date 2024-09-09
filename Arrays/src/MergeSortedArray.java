@@ -1,9 +1,9 @@
 public class MergeSortedArray {
-    public static  void MergeSortedArrays(int nums1[], int nums2[],int m,int n){
+    public static  void MergeSortedArrays(int[] nums1, int[] nums2, int m, int n){
         int i = m-1;  // i indicate nums1 m-1 index
         int j = n-1;   // j indicate nums2 n-1 index
         int k = m+n-1;    // k indicate nums1 last index
-        while(i>=0 && j >=0){
+        while(i>=0 && j>=0){
             if (nums1[i]>nums2[j]){
                 // Swapping the last index value with nums1
                 nums1[k] = nums1[i];
