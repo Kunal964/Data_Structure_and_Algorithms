@@ -106,13 +106,13 @@ public class BinaryTree {
 
         Node root = BinaryTreeB.buildTree(nodes);
         assert root != null;
-//        System.out.println(root.data);
-//        BinaryTreeB.Preorder(root);
-//        System.out.println();
-//        BinaryTreeB.inorder(root);
-//        System.out.println();
-//        BinaryTreeB.postorder(root);
-//        System.out.println();
+        System.out.println(root.data);
+        BinaryTreeB.Preorder(root);
+        System.out.println();
+        BinaryTreeB.inorder(root);
+        System.out.println();
+        BinaryTreeB.postorder(root);
+        System.out.println();
         BinaryTreeB.levelOrder(root);
 
     }

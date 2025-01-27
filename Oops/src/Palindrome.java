@@ -14,7 +14,7 @@ public class Palindrome {
     }
     public static Boolean isPalindrome(int Number){
         int temp = Number;
-         int reverse = 0;
+        int reverse = 0;
         while (temp>0) {
          int rem = temp%10;
          reverse = reverse*10 + rem;

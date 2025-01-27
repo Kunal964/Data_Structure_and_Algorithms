@@ -1,7 +1,7 @@
 package Arrays;
 
 public class Matrix {
-    public  static  void Printmatrix(int[][] matrix){
+    public static void Printmatrix(int[][] matrix){
         int sum  =  0;
         int temp = 0;
 
