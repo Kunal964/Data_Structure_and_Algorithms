@@ -24,6 +24,6 @@ public class FInd_K_Smallest_Element {
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
-        System.out.println(findClosestElements(arr,4,3));
+        System.out.println(findClosestElements(arr,4, 3));
     }
 }

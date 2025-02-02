@@ -38,7 +38,7 @@ public class HeapSort {
         int[] arr = {6,3,9,8,2,5};
         heapSort(arr);
         for (int j : arr) {
-            System.out.print(j + " ");
+            System.out.print(j + "->");
         }
     }
 }
