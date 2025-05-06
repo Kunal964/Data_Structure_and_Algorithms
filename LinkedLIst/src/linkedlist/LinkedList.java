@@ -30,22 +30,7 @@ public class LinkedList {
         // yha pr tail fix ho jati hai head aga jata rheta hai
         // basically address assign hora ha bss
     }
-   public void addLast(int data) {
-        // step 1
-        Node newNode = new Node(data);
-        size++;
-        if (head == null) {
-            head = tail = newNode;
-            return;
-        }
-        // step 2
-        tail.next = newNode;
-         // step 3
-       tail = newNode;
-       // tail ka next newNode ko point krta hai or newnode tail ban jati ha
-       // yha pr head fix ho jata ha tail forward hota rehta hai
-   }
-
+   
    public int removeFirst() {
         if (size == 0) {
             System.out.println("LL is Empty");
@@ -62,6 +47,22 @@ public class LinkedList {
         return val;
 
    }
+
+   public void addLast(int data) {
+    // step 1
+    Node newNode = new Node(data);
+    size++;
+    if (head == null) {
+        head = tail = newNode;
+        return;
+    }
+    // step 2
+    tail.next = newNode;
+     // step 3
+   tail = newNode;
+   // tail ka next newNode ko point krta hai or newnode tail ban jati ha
+   // yha pr head fix ho jata ha tail forward hota rehta hai
+}
    public int removeLast() {
        if (size == 0) {
            System.out.println("LL is Empty");
@@ -74,7 +75,7 @@ public class LinkedList {
        }
        // find prev : i = Size-2 , Size-1 = tail;
        Node prev = head;  // assign head value into prev
-       for (int i =0; i<size-2; i++) {
+       for (int i = 1; i<size-1; i++) {
            prev = prev.next; // Prev ko step by step forward krdiya
        }
        int val = prev.next.data; // tail.data
@@ -165,7 +166,7 @@ public class LinkedList {
         ll.print(); // 1->2->3->4->5
         System.out.println("Size of the Linked List "+size);
         System.out.println(ll.removeFirst());
-//        ll.print();
+         ll.print();
 //
         System.out.println(ll.removeLast());
 //        ll.print();
@@ -174,6 +175,8 @@ public class LinkedList {
 //        System.out.println(ll.search(head,4,0));
 
       //  ll.reverse();
+        ll.print();
+        ll.reverse();
         ll.print();
 
 

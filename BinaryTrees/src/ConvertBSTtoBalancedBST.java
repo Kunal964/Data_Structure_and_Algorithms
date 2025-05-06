@@ -1,3 +1,5 @@
+package BinaryTrees.src;
+
 import java.util.ArrayList;
 
 public class ConvertBSTtoBalancedBST {
@@ -58,6 +60,11 @@ public class ConvertBSTtoBalancedBST {
         root.right = new Node(10);
         root.right.right = new Node(11);
         root.right.right.right = new Node(14);
+
+        System.out.print("Preorder of Original BST: ");
+        preorder(root);
+        System.out.println();
+        System.out.print("Preorder of Balanced BST: ");
 
         Node balancedRoot = balancedBST(root);
         preorder(balancedRoot);

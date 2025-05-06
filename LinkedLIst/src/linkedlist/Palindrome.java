@@ -29,10 +29,10 @@ public class Palindrome {
     }
     private Node findMidNode(Node head) {
         Node slow = head;
-        Node fast = head;
+        Node fast = head.next;
         while(fast != null && fast.next != null) {
             slow = slow.next;
-            fast = fast.next.next;
+            fast = fast.next;
         }
         return slow;
     }
@@ -83,8 +83,8 @@ public class Palindrome {
         Palindrome ll = new Palindrome();
         ll.addLast(1);
         ll.addLast(2);
-        ll.addLast(2);
-    //    ll.addLast(1);
+        // ll.addLast(2);
+        ll.addLast(1);
 
         ll.print();
         System.out.println("Check Given Linked List is Palindrome or Not: "+ ll.checkPalindrome());

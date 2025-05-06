@@ -1,3 +1,5 @@
+package BinaryTrees.src;
+
 import java.util.ArrayList;
 
 public class BuildBst {
@@ -13,14 +15,14 @@ public class BuildBst {
         }
     }
 
-    public static Node buildTree(Node root, int val) {
-        if (root == null) {
+    public static Node buildTree(Node root, int val) {  // yha root khud parent hoti haa so left right null he rhega or value add hoti rhegi
+        if (root == null) {               // Root null hoga jab jab value add ho jyegi root mai
             root = new Node(val);
             return root;
         }
         if (root.data > val ) {
             // Left Subtree
-            root.left = buildTree(root.left, val);
+            root.left = buildTree(root.left, val);      // root.left or root.right yeah parent ke liye hota haa 
         }
         else {
             // Right Subtree
@@ -47,7 +49,7 @@ public class BuildBst {
         if (root.data == key) {
             return true;            
         }
-        if (root.data > key) {
+        if (root.data > key) {           // Agar root ka data key se bada hai to left mai jao
             return search(root.left, key);
         }
         else {
@@ -60,28 +62,29 @@ public class BuildBst {
             root.right = delete(root.right, val);
         }
         else if(root.data > val) {
-            root.left = delete(root.left, val);
+            root.left = delete(root.left, val);  // jab dono condition false hogi mtlb root.data == val hoga toh else block chlega jo delete krega
         }
-        else {
+        else {  //  else block us node ke liye execute ho raha hai jo delete karni hai  
             //case 1 - leaf node
-            if(root.left == null && root.right == null) {
+            if(root.left == null && root.right == null) {           // Delete node and return NULL to parent
                 return null;
             }
             // case 2 - single child
-            if(root.left == null) {
+            if(root.left == null) {             // Replace the node with the child
                 return root.right;
             }else if(root.right == null) {
                 return root.left;
             }
             //case 3 - Both Children
-            Node IS = findInorderSuccessor(root.right);
+            Node IS = findInorderSuccessor(root.right);   // Inorder successor (IS) right subtree ka sabse chhota element hota hai.
+            // Matlab, delete hone wali node ke data ko successor ke data se replace kar do.
             root.data = IS.data;
             root.right = delete(root.right, IS.data);
         }
         return root;
     }
 
-    public static Node findInorderSuccessor(Node root) {
+    public static Node findInorderSuccessor(Node root) { // Inorder Successor is the leftmost node of the right subtree
         while(root.left != null) {
             root = root.left;
         }
@@ -90,6 +93,7 @@ public class BuildBst {
 
     //print the tree in range
     public static void printInRange(Node root, int k1, int k2) {
+
         if(root == null) {
             return;
         }
@@ -98,13 +102,38 @@ public class BuildBst {
             System.out.print(root.data+" ");
             printInRange(root.right, k1, k2);
         }
-        else if(root.data < k1) {
-            printInRange(root.left, k1, k2);
-        }
-        else {
+        else if(root.data < k1) {   // Agar root ka data k1 se chhota hai toh right mai jao
             printInRange(root.right, k1, k2);
         }
+        else {  // Agar root ka data k2 se bada hai toh left mai jao
+            printInRange(root.left, k1, k2);
+        }
+       
     }
+
+    // Print the sum of tree in ranges 
+    public static int printInRangeSum(Node root, int k1, int k2) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int sum = 0; // Har call ke liye new sum
+        
+        if (root.data >= k1 && root.data <= k2) {
+            sum += printInRangeSum(root.left, k1, k2); // Left se sum le lo
+            sum += root.data; // Apna data add karo
+            sum += printInRangeSum(root.right, k1, k2); // Right se sum le lo
+        } 
+        else if (root.data < k1) { // Agar root ka data chhota hai toh sirf right
+            sum += printInRangeSum(root.right, k1, k2);
+        } 
+        else { // Agar root ka data bada hai toh sirf left
+            sum += printInRangeSum(root.left, k1, k2);
+        }
+        
+        return sum;
+    }
+    
     
     // Root to leaf path
     public static void printRoot2Leaf(Node root, ArrayList<Integer> path) {
@@ -132,11 +161,11 @@ public class BuildBst {
         if(root == null) {
             return true;
         }
-        if (min != null && root.data <= min.data) {
+        if (min != null && root.data <= min.data) {   //  left mai jo minimum value hoga wo root sey agr bda haa toh false return karega 
             return false;
         }
         else if(max != null && root.data >= max.data) {
-            return false;
+            return false;  // right mai jo maximum value hoga wo root sey chota hoga toh false return karega
         }
         return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
     }
@@ -173,10 +202,10 @@ public class BuildBst {
             root = buildTree(root, values[i]);
         }
 
-        inorder(root);
-        System.out.println();
-        root = createMirror(root);
-        preorder(root);
+        // inorder(root);
+        // System.out.println();
+        // root = createMirror(root);
+        // preorder(root);
 
 
         // if(isValidBST(root, null, null)) {
@@ -186,7 +215,7 @@ public class BuildBst {
         //     System.out.println("Not a Valid BST");
         // }
 
-        // printRoot2Leaf(root, new ArrayList<>());
+        printRoot2Leaf(root, new ArrayList<>());
 
         // if(search(root, 7)) {
         //     System.out.println("Found");
@@ -194,7 +223,12 @@ public class BuildBst {
         //     System.out.println("Not Found");
         // }
 
-        // printInRange(root, 5, 13);
+    //    printInRange(root, 5, 13);
+    //    System.out.println();
+    //    int ans =  printInRangeSum(root, 5, 13);
+    //    System.out.println("Sum of Tree: "+ans);
+       
+       
 
         // delete(root, 2);
 

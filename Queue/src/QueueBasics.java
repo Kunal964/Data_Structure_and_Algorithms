@@ -1,7 +1,5 @@
 package Queue.src;
 
-import java.util.Objects;
-
 public class QueueBasics {
     static class Queue {
         static int[] arr;

@@ -45,11 +45,12 @@ public class Zig_Zag_LinkedList {
          while( curr != null) {
              next = curr.next;
              curr.next = prev;
-             prev = curr; // curr address store in prev address, so curr became prev --> prev strep forward.
+             prev = curr; // curr address store in prev address, so curr became prev --> prev step forward.
              curr = next; // next address store in curr address, so next became curr --> curr step forward.
          }
          Node leftHead = head;
          Node rightHead = prev;
+         // 1-->2-->3<--4<--5<--6
          Node nextL , nextR;
          // Alternate merge - zig_zag merge
         while (leftHead != null && rightHead != null) {

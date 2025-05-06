@@ -33,8 +33,9 @@ public class InternsectionOfTwoLL {
         Node p1 = l1, p2 = l2;
 
         while(p1 != p2) {
-            p1 = p1 == null ? l2 : p1.next;
-            p2 = p2 == null ? l1 : p2.next;
+            p1 = p1 == null ? l2 : p1.next;  // p1 aur p2 ek hi pace se move karte hain, 
+            p2 = p2 == null ? l1 : p2.next;  //aur jab dono ek hi node pr pahunch jate hain, toh wahi intersection node return hoti hai. 
+                                             //Agar intersection nahi hota, toh null return hota hai. 
         }
         return p1;
     }
@@ -64,6 +65,7 @@ public class InternsectionOfTwoLL {
        l1.Print();
        System.out.println();
        l2.Print();
+       System.out.println();
      
 
        //Finding Intersection

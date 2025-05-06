@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ContainerWithMostWater {
 
-    //Brute force approach    Time complexity 0(n^2)
+    //Brute force approach Time complexity 0(n^2)
 //    public  static int StoreWater(ArrayList<Integer> height){
 //        int maxWater = 0;
 //
@@ -21,7 +21,7 @@ public class ContainerWithMostWater {
 //    }
 
 
-    // 2 Pointer Approach   // Time Complexity 0(n)  because of linear
+    // 2 Pointer Approach // Time Complexity 0(n) because of linear
     public static int StoreWater(ArrayList<Integer> height) {
         int maxWater = 0;
         int Lp = 0;  // Lp = Left Pointer

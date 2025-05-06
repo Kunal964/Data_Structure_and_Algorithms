@@ -2,9 +2,8 @@ package ArraysLists;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-// You are given an integer Arraylist numb.You are also given an integer key, which is present in numb.
-// For every unique integer target in numb,count the number of time targets immediately follows an occurrence of key in numb.
-// In other words, count the number of indices i such that
+// Question kehra haa array mai key find ho jati haa agr toh uske next element(target)
+// mai jo bi haa uski frequency sabse jyada ari usko return krd0
 
 public class MostFrequentNumber {
     public static int MaxOccurOfElement(ArrayList<Integer> nums, int key) {

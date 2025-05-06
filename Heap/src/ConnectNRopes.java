@@ -18,6 +18,7 @@ public class ConnectNRopes {
             pq.add(min + min2);
         }
         System.out.println("Cost of Connecting N Ropes = " + cost);
+        System.out.println("Now Total length of the rope will be: "+ pq.peek());
     }
 
 }

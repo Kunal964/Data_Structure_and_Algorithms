@@ -11,7 +11,6 @@ public class MergeSort {
         mergesort(arr, mid + 1, right);
         merge(arr, left, mid, right);
     }
-
     public static void merge(int[] arr, int left, int mid, int right) {
         int[] temp = new int[right - left + 1];  // creating the temp array where sorted elements store and this array length size depends on the size of the sorted elements
         int i = left; // Indexing for the 1st part of the array
@@ -22,7 +21,6 @@ public class MergeSort {
                 temp[k] = arr[i];
                 i++;
                 k++;
-
             } else {
                 temp[k] = arr[j];
                 k++;
@@ -31,18 +29,14 @@ public class MergeSort {
         }
         while (i <= mid) {
             temp[k++] = arr[i++];
-
         }
         while (j <= right) {
             temp[k++] = arr[j++];
 
         }
-
         for (k = 0, i = left; k < temp.length; k++, i++) {
             arr[i] = temp[k];
-
         }
-
     }
 
     public static void printarr(int[] arr) {
